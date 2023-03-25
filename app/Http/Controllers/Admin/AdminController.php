@@ -29,22 +29,24 @@ class AdminController extends Controller
     }
 
     public function updatepassword(Request $request){
-        // $old = Hash::make($request->password);
-        // $id = Auth::user()->id;
-        // $oldpassword =  User::where('id',$id)->first();
-        // $oldpassword->password = Hash::make($request->newpass);
-        // // if ($oldpassword) {
-        // //     $oldpassword->password = Hash::make($request->newpass);
-        // //     $oldpassword->update();
-        // // }
-        // $oldpassword->update();
-        // return back();
-
-
+        
         $request->validate([
             'oldpass' => 'required',
             'newpass' => 'required',
             'cpass' => 'required|same:newpass',
         ]);
+
+        $dbold = Auth::user()->password;
+        $old = $request->oldpass;
+        // dd(Hash::check($old,$dbold));
+        if(Hash::check($old,$dbold)){
+            $finduser = User::find(Auth::user()->id);
+            $finduser->password = bcrypt($request->newpass);
+            $finduser->save();
+            return redirect()->route('admin.profile')->with('msg','password updated successfully');
+        }else{
+            return back()->with('error','old password not matching');
+
+        }
     }
 }

@@ -45,6 +45,9 @@ Route::get('vendor/login',[VendorController::class,'login']);
 // for vendor after login 
 Route::middleware('auth','role:vendor')->group(function(){
     Route::get('/vendor/dashboard',[VendorController::class,'index'])->name('vendor.dashboard');
+    Route::get('/vendor/profile',[VendorController::class,'profile'])->name('vendor.profile');
+    Route::get('/vendor/changepassword',[VendorController::class,'changepassword'])->name('vendor.changepassword');
+    Route::post('/vendor/updatepassword',[VendorController::class,'updatepassword'])->name('vendor.updatepassword');
 });
 
 

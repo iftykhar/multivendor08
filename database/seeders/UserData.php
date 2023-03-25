@@ -24,24 +24,24 @@ class UserData extends Seeder
                 'status'=>'active',
                 'password'=> Hash::make('12345678'),
             ],
-            [
-                'name'=> "vendor",
-                'username'=>'vendor',
-                'email'=>'vendor@gmail.com',
-                'phone'=>'0193323445',
-                'role'=>'vendor',
-                'status'=>'active',
-                'password'=> Hash::make('12345678'),
-            ],
-            [
-                'name'=> "user",
-                'username'=>'user',
-                'email'=>'user@gmail.com',
-                'phone'=>'0193323445',
-                'role'=>'user',
-                'status'=>'active',
-                'password'=> Hash::make('12345678'),
-            ],
+            // [
+            //     'name'=> "vendor",
+            //     'username'=>'vendor',
+            //     'email'=>'vendor@gmail.com',
+            //     'phone'=>'0193323445',
+            //     'role'=>'vendor',
+            //     'status'=>'active',
+            //     'password'=> Hash::make('12345678'),
+            // ],
+            // [
+            //     'name'=> "user",
+            //     'username'=>'user',
+            //     'email'=>'user@gmail.com',
+            //     'phone'=>'0193323445',
+            //     'role'=>'user',
+            //     'status'=>'active',
+            //     'password'=> Hash::make('12345678'),
+            // ],
         ]);
     }
 }
