@@ -17,11 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('userdashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -49,6 +50,8 @@ Route::middleware('auth','role:vendor')->group(function(){
     Route::get('/vendor/changepassword',[VendorController::class,'changepassword'])->name('vendor.changepassword');
     Route::post('/vendor/updatepassword',[VendorController::class,'updatepassword'])->name('vendor.updatepassword');
 });
+
+
 
 
 require __DIR__.'/auth.php';

@@ -101,14 +101,17 @@
                                         </select>
                                     </form>
                                 </div>
-                               
-                                <div class="header-action-icon-2">
-                                    <a href="shop-wishlist.html">
-                                        <img class="svgInject" alt="Nest" src="{{ asset('frontend')}}/assets/imgs/theme/icons/icon-heart.svg" />
-                                        <span class="pro-count blue">6</span>
-                                    </a>
-                                    <a href="shop-wishlist.html"><span class="lable">Wishlist</span></a>
-                                </div>
+                               @if(empty(Auth::user()->username))
+                                    <div class="header-action-icon-2">
+                                        <a href="shop-wishlist.html">
+                                            <img class="svgInject" alt="Nest" src="{{ asset('frontend')}}/assets/imgs/theme/icons/icon-heart.svg" />
+                                            <span class="pro-count blue">6</span>
+                                        </a>
+                                        <a href="{{ route('login') }}"><span class="lable">Login /</span></a>
+                                        <a href="{{ route('register') }}"><span class="lable">Registration</span></a>
+                                    </div>
+                               @endif
+                                
                                 <div class="header-action-icon-2">
                                     <a class="mini-cart-icon" href="shop-cart.html">
                                         <img alt="Nest" src="{{ asset('frontend')}}/assets/imgs/theme/icons/icon-cart.svg" />
@@ -153,6 +156,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if(!empty(Auth::user()->username))
                                 <div class="header-action-icon-2">
                                     <a href="page-account.html">
                                         <img class="svgInject" alt="Nest" src="{{ asset('frontend')}}/assets/imgs/theme/icons/icon-user.svg" />
@@ -176,11 +180,16 @@
                                                 <a href="page-account.html"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
                                             </li>
                                             <li>
-                                                <a href="page-login.html"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                                                <form action="{{route('logout')}}" method="post">
+                                                    @csrf
+                                                
+                                                <button class="btn " href=""><i class="fi fi-rs-sign-out mr-10"></i>Sign out</button>
+                                            </form>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>

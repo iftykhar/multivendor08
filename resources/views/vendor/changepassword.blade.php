@@ -1,6 +1,6 @@
-@extends('admin.include.master')
+@extends('vendor.include.master')
 
-@section('admin')
+@section('vendor')
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -13,7 +13,7 @@
                     <h4 class="mt-5 font-weight-bold">Genrate New Password</h4>
                     <p class="text-muted">We received your reset password request. Please enter your new password!</p>
 
-                <form action="{{route('admin.updatepassword')}}" method="post">
+                <form action="{{route('vendor.updatepassword')}}" method="post">
                         @csrf
 
                     
