@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Apitesting;
 use App\Http\Controllers\Vendor\VendorController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\ApitestingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/apitest',[Apitesting::class,'index']);
+
 
 Route::get('/', function () {
     return view('dashboard');
@@ -52,6 +58,12 @@ Route::middleware('auth','role:vendor')->group(function(){
 });
 
 
+// for backend operation 
+Route::middleware('auth','role:admin')->group(function(){
+    Route::group(['prefix'=>'/category'],function(){
+        Route::get('/add',[CategoryController::class,'index'])->name('add.category');
+    });
+});
 
 
 require __DIR__.'/auth.php';
