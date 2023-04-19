@@ -51,6 +51,7 @@
 										<hr/>
 									</div>
 									<div class="form-body">
+										
 										<form class="row g-3" method="post" action="{{ route('login')}}">
                                             @csrf
 											<div class="col-12">

@@ -22,7 +22,7 @@ class UserData extends Seeder
                 'phone'=>'0193323445',
                 'role'=>'admin',
                 'status'=>'active',
-                'password'=> Hash::make('123456789'),
+                'password'=> Hash::make('123456'),
             ],
             [
                 'name'=> "vendor",
@@ -31,7 +31,7 @@ class UserData extends Seeder
                 'phone'=>'0193323445',
                 'role'=>'vendor',
                 'status'=>'active',
-                'password'=> Hash::make('123456789'),
+                'password'=> Hash::make('123456'),
             ],
             [
                 'name'=> "user",
@@ -40,7 +40,7 @@ class UserData extends Seeder
                 'phone'=>'0193323445',
                 'role'=>'user',
                 'status'=>'active',
-                'password'=> Hash::make('123456789'),
+                'password'=> Hash::make('123456'),
             ],
         ]);
     }
