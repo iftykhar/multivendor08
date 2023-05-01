@@ -13,12 +13,12 @@
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
 				<li>
-					<a href="javascript:;" class="has-arrow">
+					<a href="{{ route('admin.dashboard') }}" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-home-circle'></i>
 						</div>
 						<div class="menu-title">Dashboard</div>
 					</a>
-					<ul>
+					<!-- <ul>
 						<li> <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Default</a>
 						</li>
 						<li> <a href="dashboard-eCommerce.html"><i class="bx bx-right-arrow-alt"></i>eCommerce</a>
@@ -29,7 +29,7 @@
 						</li>
 						<li> <a href="dashboard-human-resources.html"><i class="bx bx-right-arrow-alt"></i>Human Resources</a>
 						</li>
-					</ul>
+					</ul> -->
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
@@ -37,7 +37,7 @@
 						</div>
 						<div class="menu-title">Application</div>
 					</a>
-					<ul>
+					<!-- <ul>
 						<li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
 						</li>
 						<li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
@@ -52,7 +52,7 @@
 						</li>
 						<li> <a href="app-fullcalender.html"><i class="bx bx-right-arrow-alt"></i>Calendar</a>
 						</li>
-					</ul>
+					</ul> -->
 				</li>
 				<li class="menu-label">UI Elements</li>
 				<li>
@@ -62,24 +62,24 @@
 						<div class="menu-title">Widgets</div>
 					</a>
 				</li>
-				<li>
+				 <li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-cart'></i>
 						</div>
-						<div class="menu-title">eCommerce</div>
+						<div class="menu-title">Category</div>
 					</a>
 					<ul>
-						<li> <a href="ecommerce-products.html"><i class="bx bx-right-arrow-alt"></i>Products</a>
+						<li> <a href="{{route('add.category')}}"><i class="bx bx-right-arrow-alt"></i>Add Category</a>
 						</li>
-						<li> <a href="ecommerce-products-details.html"><i class="bx bx-right-arrow-alt"></i>Product Details</a>
+						<!-- <li> <a href="ecommerce-products-details.html"><i class="bx bx-right-arrow-alt"></i>Product Details</a>
 						</li>
 						<li> <a href="ecommerce-add-new-products.html"><i class="bx bx-right-arrow-alt"></i>Add New Products</a>
 						</li>
 						<li> <a href="ecommerce-orders.html"><i class="bx bx-right-arrow-alt"></i>Orders</a>
-						</li>
+						</li> -->
 					</ul>
 				</li>
-				<li>
+				<!--<li>
 					<a class="has-arrow" href="javascript:;">
 						<div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
 						</div>
@@ -324,7 +324,7 @@
 						</div>
 						<div class="menu-title">Support</div>
 					</a>
-				</li>
+				</li> -->
 			</ul>
 			<!--end navigation-->
 		</div>

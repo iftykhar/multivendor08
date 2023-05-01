@@ -46,6 +46,9 @@ Route::middleware('auth','role:admin')->group(function(){
     Route::get('/admin/profile',[AdminController::class,'profile'])->name('admin.profile');
     Route::get('/admin/changepassword',[AdminController::class,'changepassword'])->name('admin.changepassword');
     Route::post('/admin/updatepassword',[AdminController::class,'updatepassword'])->name('admin.updatepassword');
+    Route::group(['prefix'=>'/category'],function(){
+        Route::get('/add',[CategoryController::class,'index'])->name('add.category');
+    });
 });
 // for vendor before login 
 Route::get('vendor/login',[VendorController::class,'login']);
@@ -58,12 +61,10 @@ Route::middleware('auth','role:vendor')->group(function(){
 });
 
 
-// for backend operation 
-Route::middleware('auth','role:admin')->group(function(){
-    Route::group(['prefix'=>'/category'],function(){
-        Route::get('/add',[CategoryController::class,'index'])->name('add.category');
-    });
-});
+// // for backend operation 
+// Route::middleware('auth','role:admin')->group(function(){
+    
+// });
 
 
 require __DIR__.'/auth.php';
