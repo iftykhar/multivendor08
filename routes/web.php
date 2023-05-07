@@ -48,6 +48,8 @@ Route::middleware('auth','role:admin')->group(function(){
     Route::post('/admin/updatepassword',[AdminController::class,'updatepassword'])->name('admin.updatepassword');
     Route::group(['prefix'=>'/category'],function(){
         Route::get('/add',[CategoryController::class,'index'])->name('add.category');
+        Route::post('/store',[CategoryController::class,'store'])->name('store.category');
+        Route::get('/show',[CategoryController::class,'show'])->name('show.category');
     });
 });
 // for vendor before login 
