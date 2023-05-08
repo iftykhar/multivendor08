@@ -71,6 +71,8 @@
 					<ul>
 						<li> <a href="{{route('add.category')}}"><i class="bx bx-right-arrow-alt"></i>Add Category</a>
 						</li>
+						<li> <a href="{{route('show.category')}}"><i class="bx bx-right-arrow-alt"></i>Show Category</a>
+						</li>
 						<!-- <li> <a href="ecommerce-products-details.html"><i class="bx bx-right-arrow-alt"></i>Product Details</a>
 						</li>
 						<li> <a href="ecommerce-add-new-products.html"><i class="bx bx-right-arrow-alt"></i>Add New Products</a>
